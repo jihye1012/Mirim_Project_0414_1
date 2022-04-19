@@ -10,10 +10,11 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
     RadioGroup rg;
-    CheckBox checkStart;
+    Switch checkStart;
     ImageView imgv;
     LinearLayout LinearSub;
 
@@ -28,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
         Button btnDone = findViewById(R.id.btn_done);
         btnDone.setOnClickListener(btnListener);
         checkStart.setOnCheckedChangeListener(checkListener);
+        Button btnFinish = findViewById(R.id.btn_finish);
+        btnFinish.setOnClickListener(btnListener);
+        View.OnClickListener btnListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        };
 
     }
     View.OnClickListener btnListener = new View.OnClickListener() {
